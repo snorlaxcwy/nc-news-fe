@@ -40,3 +40,15 @@
 .read-the-docs {
   color: #888;
 }
+footer a {
+  color: #fff;
+  text-decoration: none;
+  padding: 0.5rem 0.8rem;
+  transition: color 0.2s;
+}
+footer a.active {
+  color: #eeba52;
+}
+footer a:hover {
+  color: #86f6f8;
+}
