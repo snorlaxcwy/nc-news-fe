@@ -15,6 +15,33 @@
 - vote for article & comment
 - topic filter
 
+# Basic - Git
+
+    git checkout master
+    git pull origin master
+    git checkout -b fe-ncnews-display-articles
+    git add .
+    git commit -m "Ticket #1: display articles list"
+    git push origin fe-ncnews-display-articles
+    githyb -> Compare & pull request
+
+# Task 1 Create a React project and a public repo
+
+    cd nc-news
+    git init
+    cd nc-news
+    git remote add origin https://github.com/your-username/nc-news.git
+    git push origin main
+
+# Task 2 Enable CORS on BE repo
+
+    npm install cors
+    [backend!] (also fixed render issue)
+     app.js => const cors = require('cors'); && app.use(cors());
+        git add package.json package-lock.json app.js
+        git commit -m 'allow cross origin resource sharing'
+        git push origin main
+
 # Task 3 Planning
 
 ## Component Tree:
