@@ -24,7 +24,7 @@ export default function ArticleList() {
   if (error) return <div>{error}</div>;
 
   return (
-    <main>
+    <main style={{ marginBottom: "10rem", marginTop: "3rem" }}>
       {articles.map((article) => (
         <ArticleCard key={article.article_id} article={article} />
       ))}

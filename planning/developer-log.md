@@ -68,3 +68,15 @@
          => css need bottom and left incase overwritten
 
     - layout : card and clickable, stack, stick header and footer with 4 icons
+
+# Task 5 View an individual article
+
+    - Path : /articles/:article_id
+    - react router => article card{link} click to article detail
+    - pages/articleDetail => component commentList, CommentCard, CommentForm(later)
+    - App + new route
+    - ArticleCard => clickable
+    - create ArticleDetail.jsx
+    - add link to the header
+    - add margin bottom at ArticleList to fix the content hidden problem
+    - sticky header
