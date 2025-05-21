@@ -23,8 +23,9 @@ nc-news-fe/
 │ │ └── NotFound.jsx // 404
 │ ├── App.jsx //skeleton ＋ router ＋ state
 │ ├── index.js // React entry point
-│ ├── utils/
-│ │ └── Api.jsx // axios
+│ ├── api/
+│ │ ├── comments.jsx //axios - fetch data
+│ │ └── articles.jsx // axios - fetch data
 │ └── styles/ // css
 │ └── App.css
 ├── package.json
