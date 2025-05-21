@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { fetchArticleById } from "../api/articles";
+import CommentList from "../components/CommentList";
 
 export default function ArticleDetail() {
   const { article_id } = useParams();
@@ -26,7 +27,14 @@ export default function ArticleDetail() {
   if (!article) return <div>No article found.</div>;
 
   return (
-    <div>
+    <div
+      style={{
+        boder: "1px solid  #51545d",
+        borderRadius: "10px",
+        padding: "1rem",
+        marginTop: "2.5rem",
+      }}
+    >
       <h2>{article.title}</h2>
       <p>
         <b>By:</b>
@@ -35,10 +43,14 @@ export default function ArticleDetail() {
       </p>
       <p>{article.body}</p>
       <p>
-        <b>Likes:</b>
-        {article.votes} | <b>Comments:</b>
-        {article.conmment_count}
+        <h5>
+          <b>Likes:</b>
+          {article.votes} | <b>Comments:</b>
+          {article.comment_count}
+        </h5>
       </p>
+      <hr />
+      <CommentList />
     </div>
   );
 }

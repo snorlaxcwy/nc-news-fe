@@ -21,9 +21,9 @@
     git pull origin master
     git checkout -b fe-ncnews-display-articles
     git add .
-    git commit -m "Ticket #1: display articles list"
+    git commit -m "1: display articles list"
     git push origin fe-ncnews-display-articles
-    githyb -> Compare & pull request
+    github -> Compare & pull request
 
 # Task 1 Create a React project and a public repo
 
@@ -80,3 +80,12 @@
     - add link to the header
     - add margin bottom at ArticleList to fix the content hidden problem
     - sticky header
+
+# 6 View a list of comments associated with an article
+
+    - Api endpoint :/api/articles/:article_id/comments
+    - new components : CommentList + CommentCard
+    - CommentList : useParams() to take article_id, fetch comments, control loading/error state, render all the CommentCard
+    - CommentCard : fetch all single comment
+    - ArticleDetail to add <CommentList />
+    - future to correct** possible problems : comment list => infinite scroll (show more), sort comment + search comment, if votes is negative, show up dislike
