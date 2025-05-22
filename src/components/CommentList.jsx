@@ -4,11 +4,16 @@ import { fetchCommentsByArticle } from "../api/comments";
 import CommentCard from "./CommentCard";
 import AddComment from "./AddComment";
 
-export default function CommentList() {
+export default function CommentList({ currentUser }) {
   const { article_id } = useParams();
   const [comments, setComments] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
+
+  // delete comment of current user, filter out non comment_id user
+  function handleDelete(comment_id) {
+    setComments((curr) => curr.filter((c) => c.comment_id != comment_id));
+  }
 
   //add the new posted comment to the top
   function handleNewComment(newComment) {
@@ -57,7 +62,12 @@ export default function CommentList() {
       </h4>
 
       {comments.map((comment) => (
-        <CommentCard key={comment.comment_id} comment={comment} />
+        <CommentCard
+          key={comment.comment_id}
+          comment={comment}
+          currentUser={currentUser}
+          onDelete={handleDelete}
+        />
       ))}
       <AddComment article_id={article_id} commentSuccess={handleNewComment} />
     </div>
