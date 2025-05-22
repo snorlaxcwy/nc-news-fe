@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { fetchCommentsByArticle } from "../api/comments";
 import CommentCard from "./CommentCard";
+import AddComment from "./AddComment";
 
 export default function CommentList() {
   const { article_id } = useParams();
@@ -9,6 +10,10 @@ export default function CommentList() {
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
 
+  //add the new posted comment to the top
+  function handleNewComment(newComment) {
+    setComments((curr) => [newComment, ...curr]);
+  }
   useEffect(() => {
     setIsLoading(true);
     fetchCommentsByArticle(article_id)
@@ -50,9 +55,11 @@ export default function CommentList() {
       >
         Comments
       </h4>
+
       {comments.map((comment) => (
         <CommentCard key={comment.comment_id} comment={comment} />
       ))}
+      <AddComment article_id={article_id} commentSuccess={handleNewComment} />
     </div>
   );
 }

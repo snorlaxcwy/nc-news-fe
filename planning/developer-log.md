@@ -106,3 +106,13 @@
     - p.s. 1 don't how to make articleCard and articleDetail have the voting function at the same time, now just display the votes and comment count in articleCard.
     - p.s.2 will try do the function "user only vote once on one article" after the login page is finished
     - p.s. 3 should add votes function to each comment as well (need to update the UI plan)
+
+# 8 Post a new comment to an existing article
+
+    - Endpoint: POST /api/articles/:article_id/comments
+    - body: { username, body } => textarea required, posting disable textarea & sumbit button, after POST success clear textarea and add comment to commentlist, catch error
+    - Create Component: CommentList add AddComment.jsx
+    - fetch api : api/comment.js
+    - connect CommentList & AddComment
+    - P.S. need to do infinite scroll down and limit comemnt display later
+    - reset user later, now default to specific user
