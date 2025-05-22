@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { fetchArticleById, patchArticleVotes } from "../api/articles";
 import CommentList from "../components/CommentList";
 
-export default function ArticleDetail(currentUser) {
+export default function ArticleDetail({ currentUser }) {
   const { article_id } = useParams();
   const [article, setArticles] = useState(null);
   const [isLoading, setIsLoading] = useState(true);

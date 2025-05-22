@@ -17,6 +17,13 @@ export default function CommentList({ currentUser }) {
 
   //add the new posted comment to the top
   function handleNewComment(newComment) {
+    console.log(
+      "[Add] newComment.author:",
+      newComment.author,
+      "currentUser:",
+      currentUser,
+      typeof currentUser
+    );
     setComments((curr) => [newComment, ...curr]);
   }
   useEffect(() => {
