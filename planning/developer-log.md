@@ -116,3 +116,17 @@
     - connect CommentList & AddComment
     - P.S. need to do infinite scroll down and limit comemnt display later
     - reset user later, now default to specific user
+
+# 9 Delete comments
+
+    - API Endpoint : DELETE /api/comments/:comment_id
+    - deleteComment() at api/comments.js
+    - only can delete own comment
+    - CommentCard => props => currentUser and add Delete button
+    - condition: if comment.author === currentUser, display delete button
+    - delete => disable button, deleting...
+    - if API call success, remove comment
+    - if API failed, err msg/ retry
+    - need to define currentUser at App.jsx!!(when no login page)
+    - pass the props => apps=> ArticleDetail =>CommentList => CommentCard
+    - CommentList(pass currentUser to Params) => handleDelete function, add back CommendCard value of currentUser and onDelete

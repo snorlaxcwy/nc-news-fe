@@ -12,3 +12,7 @@ export function postComment(article_id, comment) {
     .post(`${BASE_URL}/articles/${article_id}/comments`, comment)
     .then((res) => res.data.comment);
 }
+
+export function deleteComment(comment_id) {
+  return axios.delete(`${BASE_URL}/comments/${comment_id}}`);
+}

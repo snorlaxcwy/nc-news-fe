@@ -6,12 +6,16 @@ import ArticleDetail from "./pages/ArticleDetail";
 import { Routes, Route } from "react-router-dom";
 
 export default function App() {
+  const currentUser = "cooljmessy";
   return (
     <>
       <Header />
       <Routes>
-        <Route path="/" element={<ArticleList />} />
-        <Route path="/articles/:article_id" element={<ArticleDetail />} />
+        <Route path="/" element={<ArticleList currentUser={currentUser} />} />
+        <Route
+          path="/articles/:article_id"
+          element={<ArticleDetail currentUser={currentUser} />}
+        />
       </Routes>
 
       <Footer />

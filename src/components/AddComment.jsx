@@ -6,10 +6,10 @@ export default function AddComment({ article_id, commentSuccess }) {
   const [isPosting, setIsPosting] = useState(false);
   const [error, setError] = useState(null);
 
-  //no login page now, assume butter_bridge
-  const username = "butter_bridge";
+  //no login page now, assume weegembump
+  const username = "weegembump";
 
-  function handleSumbit(e) {
+  function handleSubmit(e) {
     e.preventDefault();
     if (!comment.trim()) {
       return setError("Please enter a comment!");
@@ -31,7 +31,7 @@ export default function AddComment({ article_id, commentSuccess }) {
       });
   }
   return (
-    <form>
+    <form onSubmit={handleSubmit}>
       <label>
         <b>Add your comement 💬 </b>
         <textarea
@@ -44,7 +44,7 @@ export default function AddComment({ article_id, commentSuccess }) {
       </label>
       <br />
       <button
-        type="sumbit"
+        type="submit"
         disabled={isPosting || !comment.trim()}
         style={{
           marginTop: "0.4rem",
