@@ -12,3 +12,10 @@ export function fetchArticleById(article_id) {
     .get(`${BASE_URL}/articles/${article_id}`)
     .then((res) => res.data.article);
 }
+
+// fetch votes for an article
+export function patchArticleVotes(article_id, inc_votes) {
+  return axios
+    .patch(`${BASE_URL}/articles/${article_id}`, { inc_votes })
+    .then((res) => res.data.article);
+}

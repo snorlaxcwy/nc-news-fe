@@ -13,23 +13,45 @@ export default function ArticleCard({ article }) {
       <div
         className="article-card"
         style={{
-          boder: "1px dashed #51545d",
+          border: "1px solid #51545d",
           borderRadius: "10px",
-          padding: "1rem",
-          margin: "0.5rem",
+          padding: "1.5rem",
+          margin: "2rem 0",
+          background: "#fff",
         }}
       >
         <h2>{article.title}</h2>
         <p>
-          <b>By:</b>
-          {article.author} | <b>Date:</b>
+          <b>By:</b> {article.author} | <b>Date:</b>{" "}
           {new Date(article.created_at).toLocaleDateString()}
         </p>
         <p>{shortDesc}</p>
-        <p>
-          <b>Likes:</b> {article.votes} | <b>Comments:</b>
-          {article.comment_count}
-        </p>
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            gap: "0.6rem",
+            background: "#f5f6fa",
+            borderRadius: "1.5rem",
+            padding: "0.3rem 0.9rem",
+            margin: "1rem 0",
+            textAlign: "left",
+          }}
+        >
+          <span
+            style={{
+              fontWeight: "bold",
+              fontSize: "0.9rem",
+              minWidth: "2rem",
+              textAlign: "center",
+            }}
+          >
+            ▲ votes ▼ {article.votes}
+          </span>
+          <span style={{ marginLeft: "1.2rem", fontSize: "0.9rem" }}>
+            <b>💬 Comments:</b> {article.comment_count}
+          </span>
+        </div>
       </div>
     </Link>
   );

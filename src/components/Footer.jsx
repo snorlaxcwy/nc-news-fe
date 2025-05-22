@@ -10,7 +10,7 @@ export default function Footer() {
       style={{
         display: "flex",
         justifyContent: "space-around",
-        padding: "0.8rem 0",
+        padding: "0.3rem 0",
         background: "#51545d",
         borderTop: "1px dashed #ffffff",
         color: "#ffffff",

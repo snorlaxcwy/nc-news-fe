@@ -89,3 +89,20 @@
     - CommentCard : fetch all single comment
     - ArticleDetail to add <CommentList />
     - future to correct** possible problems : comment list => infinite scroll (show more), sort comment + search comment, if votes is negative, show up dislike
+
+# 7 Vote on an article
+
+    - endpoint: PATCH /api/articles/:article_id => api/articles.js
+    - body : { inc_votes: 1 } || { inc_votes: -1 }
+    - two button UP || DOWN
+    - show total votes => Optimistic Rendering
+    - if Api fail, resume the votes and show error
+    - ArticleDetail => new state : votes(how many likes now), voteError(rollback if error), isVoting(loading, avoid repeated loading)
+    - useEffect to fetch data , params=article_id =>1. loading UI=setIsLoading(true) => 2.fetchArticleById = call API => 3. if success = save data, setIsLoading(false) => 4. failed = save err msg, setIsLoading(false)
+    - sync votes by useEffect, params: article
+    - handleVote function => optimistic rendering, if voting no pressed button, clear old error => api need to update the new vote, if error, push back to original vote
+    - render UI, copy reddit vote UI, re-observer forum setting, text all align to left not center!
+    - adjust css to a simple layout to see
+    - p.s. 1 don't how to make articleCard and articleDetail have the voting function at the same time, now just display the votes and comment count in articleCard.
+    - p.s.2 will try do the function "user only vote once on one article" after the login page is finished
+    - p.s. 3 should add votes function to each comment as well (need to update the UI plan)
