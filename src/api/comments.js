@@ -6,3 +6,9 @@ export function fetchCommentsByArticle(article_id) {
     .get(`${BASE_URL}/articles/${article_id}/comments`)
     .then((res) => res.data.comments);
 }
+
+export function postComment(article_id, comment) {
+  return axios
+    .post(`${BASE_URL}/articles/${article_id}/comments`, comment)
+    .then((res) => res.data.comment);
+}

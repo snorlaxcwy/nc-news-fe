@@ -9,12 +9,14 @@ nc-news-fe/
 │ │ ├── Header.jsx
 │ │ ├── Footer.jsx
 │ │ ├── ArticleCard.jsx
+│ │ ├── ArticleList.jsx
 │ │ ├── CommentCard.jsx
+│ │ ├── ComemntList.jsx
+│ │ ├── AddComment.jsx
 │ │ ├── Pagination.jsx
 │ │ ├── SortBy.jsx
 │ │ └── ...  
 │ ├── pages/  
-│ │ ├── ArticleList.jsx  
 │ │ ├── ArticleDetail.jsx  
 │ │ ├── TopicList.jsx  
 │ │ ├── TopicArticles.jsx  
@@ -24,7 +26,7 @@ nc-news-fe/
 │ ├── App.jsx //skeleton ＋ router ＋ state
 │ ├── index.js // React entry point
 │ ├── api/
-│ │ ├── comments.jsx //axios - fetch data
+│ │ ├── comments.jsx //axios - fetch data ＋ post data
 │ │ └── articles.jsx // axios - fetch data
 │ └── styles/ // css
 │ └── App.css
