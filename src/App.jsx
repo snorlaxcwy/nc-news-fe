@@ -6,7 +6,7 @@ import ArticleDetail from "./pages/ArticleDetail";
 import { Routes, Route } from "react-router-dom";
 
 export default function App() {
-  const currentUser = "cooljmessy";
+  const currentUser = "weegembump";
   return (
     <>
       <Header />

@@ -14,5 +14,5 @@ export function postComment(article_id, comment) {
 }
 
 export function deleteComment(comment_id) {
-  return axios.delete(`${BASE_URL}/comments/${comment_id}}`);
+  return axios.delete(`${BASE_URL}/comments/${comment_id}`);
 }

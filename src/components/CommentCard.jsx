@@ -17,7 +17,20 @@ export default function CommentCard({ comment, currentUser, onDelete }) {
         setIsDeleting(false);
       });
   }
-
+  console.log(
+    "comment.author:",
+    comment.author,
+    "currentUser:",
+    currentUser,
+    typeof currentUser
+  );
+  console.log(
+    "[CommentCard] comment.author:",
+    comment.author,
+    "currentUser:",
+    currentUser,
+    typeof currentUser
+  );
   return (
     <div
       style={{
@@ -31,6 +44,29 @@ export default function CommentCard({ comment, currentUser, onDelete }) {
     >
       <small>
         {comment.author} | {new Date(comment.created_at).toLocaleString()}
+        {comment.author === currentUser && (
+          <>
+            {" "}
+            |{" "}
+            <span
+              onClick={handleDelete}
+              style={{
+                color: "orange",
+                textDecoration: "underline",
+                cursor: isDeleting ? "not-allowed" : "pointer",
+                opacity: isDeleting ? 0.5 : 1,
+              }}
+              role="button"
+              tabIndex={0}
+              aria-disabled={isDeleting}
+            >
+              {isDeleting ? "Deleting..." : "Delete"}
+            </span>
+            {deleteError && (
+              <div style={{ color: "orange " }}>{deleteError}</div>
+            )}
+          </>
+        )}
       </small>
       <p>{comment.body}</p>
 
@@ -38,25 +74,6 @@ export default function CommentCard({ comment, currentUser, onDelete }) {
         <b>Votes: </b>
         {comment.votes}
       </div>
-      <button
-        onClick={handleDelete}
-        disabled={isDeleting}
-        style={{
-          color: "#fff",
-          background: "#d90429",
-          border: "none",
-          borderRadius: "4px",
-          padding: "0.2em 1.1em",
-          fontWeight: "bold",
-          cursor: isDeleting ? "not-allowed" : "pointer",
-          position: "absolute",
-          right: 12,
-          top: 12,
-        }}
-      >
-        {isDeleting ? "Deleting..." : "Delete"}
-      </button>
-      {deleteError && <div style={{ color: orange }}>{deleteError}</div>}
     </div>
   );
 }
