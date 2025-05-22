@@ -30,14 +30,26 @@ export default function CommentList() {
   return (
     <div
       style={{
-        border: "2px dashed # 51545d",
-        borderRadius: "8px",
-        margainTop: "0.5rem",
-        marginBottom: "3rem",
+        border: "2px dashed #51545d",
+        borderRadius: "10px",
         padding: "1rem",
+        background: "#fafbfc",
+        marginTop: "1.8rem",
+        marginBottom: "2rem",
       }}
     >
-      <h4>Comments</h4>
+      <h4
+        style={{
+          marginTop: 0,
+          marginBottom: "1.3rem",
+          fontWeight: 700,
+          color: "#51545d",
+          fontSize: "1.2rem",
+          letterSpacing: "1px",
+        }}
+      >
+        Comments
+      </h4>
       {comments.map((comment) => (
         <CommentCard key={comment.comment_id} comment={comment} />
       ))}

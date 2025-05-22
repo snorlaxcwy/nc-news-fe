@@ -7,18 +7,18 @@ export default function CommentCard({ comment }) {
         margin: "0.3rem",
         padding: "0.3rem",
         background: "#ffffff",
+        textAlign: "left",
       }}
     >
       <small>
         {comment.author} | {new Date(comment.created_at).toLocaleString()}
       </small>
       <p>{comment.body}</p>
-      <p>
-        <h5>
-          <b>Likes or Dislike?: </b>
-          {comment.votes}
-        </h5>
-      </p>
+
+      <div>
+        <b>Votes: </b>
+        {comment.votes}
+      </div>
     </div>
   );
 }

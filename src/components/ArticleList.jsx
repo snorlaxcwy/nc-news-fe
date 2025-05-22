@@ -24,7 +24,21 @@ export default function ArticleList() {
   if (error) return <div>{error}</div>;
 
   return (
-    <main style={{ marginBottom: "10rem", marginTop: "3rem" }}>
+    <main
+      style={{
+        maxWidth: "680px",
+        boxShadow: "0 4px 24px #51545d33",
+        alignItems: "center",
+        border: "0.3px solid  #51545d",
+        borderTop: "1px solid #51545d",
+        borderRadius: "10px",
+        padding: "0rem 2rem 0rem 2rem",
+        marginTop: "2.2rem",
+        marginBottom: "3.5rem",
+        margin: "3.8rem auto 3.5rem auto",
+        textAlign: "left",
+      }}
+    >
       {articles.map((article) => (
         <ArticleCard key={article.article_id} article={article} />
       ))}

@@ -5,15 +5,18 @@ export default function Header() {
     <header
       style={{
         display: "flex",
-        justifyContent: "space-around",
-        background: "#ffffff",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        background: "#fff",
         color: "#51545D",
         position: "fixed",
-        width: "100%",
-        height: "12%",
-        left: 0,
-        zIndex: 100,
         top: 0,
+        left: 0,
+        width: "100%",
+        height: "56px",
+        zIndex: 100,
+        boxShadow: "0 2px 16px #51545d33",
       }}
     >
       <Link to={`/`} style={{ textDecoration: "none", color: "inherit" }}>
