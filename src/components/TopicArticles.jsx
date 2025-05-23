@@ -6,7 +6,6 @@ import ArticleList from "./ArticleList";
 
 export default function TopicArticles() {
   const { topic_slug } = useParams();
-
   const [articles, setArticles] = useState([]);
   const [topic, setTopic] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
@@ -89,7 +88,7 @@ export default function TopicArticles() {
           <span>{topic_slug}</span>
         )}
       </div>
-      <ArticleList articles={articles} />
+      <ArticleList topic={topic_slug} />
     </div>
   );
 }
