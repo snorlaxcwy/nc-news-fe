@@ -6,6 +6,7 @@ import ArticleDetail from "./pages/ArticleDetail";
 import { Routes, Route } from "react-router-dom";
 import TopicsArticles from "./components/TopicArticles";
 import TopicsList from "./components/TopicsList";
+import NotFound from "./pages/404NotFound";
 
 export default function App() {
   const currentUser = "weegembump";
@@ -20,6 +21,7 @@ export default function App() {
         />
         <Route path="/topics" element={<TopicsList />} />
         <Route path="/topics/:topic_slug" element={<TopicsArticles />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
 
       <Footer />

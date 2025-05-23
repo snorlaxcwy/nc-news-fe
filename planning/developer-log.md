@@ -149,3 +149,9 @@
     - articles.js adjust for sort by and order by
     - ArticleList  => amend useEffect fetch
     - touch up the css later
+
+# 12 Error Handling
+
+    - <Routes> => <Route path="*" element={<404NotFound />} />
+    - 404NotFound.jsx => return not found msg
+    - error setting has been done before in all the api fetching
