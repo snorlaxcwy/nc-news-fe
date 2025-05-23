@@ -152,6 +152,12 @@
 
 # 12 Error Handling
 
-    - <Routes> => <Route path="*" element={<404NotFound />} />
-    - 404NotFound.jsx => return not found msg
+    - <Routes> => <Route path="*" element={<NotFound />} />
+    - 404NotFound.jsx =>NotFound()  return not found msg
     - error setting has been done before in all the api fetching
+
+# 13 Depoly
+
+    - https://dapper-froyo-08b7cd.netlify.app/
+
+# 14 ReadMe
