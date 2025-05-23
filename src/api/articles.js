@@ -19,3 +19,10 @@ export function patchArticleVotes(article_id, inc_votes) {
     .patch(`${BASE_URL}/articles/${article_id}`, { inc_votes })
     .then((res) => res.data.article);
 }
+
+// fetch articles by topics
+export function fetchTopicsByArticleId(topic) {
+  return axios
+    .get(`${BASE_URL}/articles?topic=${topic}`)
+    .then((res) => res.data.articles);
+}
