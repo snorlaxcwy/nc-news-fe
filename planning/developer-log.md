@@ -130,3 +130,14 @@
     - need to define currentUser at App.jsx!!(when no login page)
     - pass the props => apps=> ArticleDetail =>CommentList => CommentCard
     - CommentList(pass currentUser to Params) => handleDelete function, add back CommendCard value of currentUser and onDelete
+
+# 10 View a separate page for each topic with a list of related articles
+
+    - endpoint: /api/topics => /topics/:topic_slang
+    - api/topics.js
+    - new component : TopicsList, TopicArticles
+    - reuse ArticleList & Article Card
+    - fetchArticlesByTopic() & fetchTopics  in api/articles.js
+    - TopicArticles => Photo cover(fixed later) + componenet : articlelist
+    - TopicList.jsx => useEfftect fetchTopics
+    - add route to app

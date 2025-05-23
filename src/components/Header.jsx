@@ -5,7 +5,6 @@ export default function Header() {
     <header
       style={{
         display: "flex",
-        display: "flex",
         alignItems: "center",
         justifyContent: "center",
         background: "#fff",
