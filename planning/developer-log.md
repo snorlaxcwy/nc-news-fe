@@ -141,3 +141,11 @@
     - TopicArticles => Photo cover(fixed later) + componenet : articlelist
     - TopicList.jsx => useEfftect fetchTopics
     - add route to app
+
+# 11 Sort articles
+
+    - ArticleList => useState : sortby + order
+    - ArticleList => render UI button group
+    - articles.js adjust for sort by and order by
+    - ArticleList  => amend useEffect fetch
+    - touch up the css later
