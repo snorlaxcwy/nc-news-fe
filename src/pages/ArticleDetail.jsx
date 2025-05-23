@@ -48,7 +48,10 @@ export default function ArticleDetail({ currentUser }) {
   }
 
   if (isLoading) return <div>Loading article...</div>;
-  if (error) return <div>{error}</div>;
+  if (error)
+    return (
+      <div style={{ color: "red", textAlign: "center" }}>Article Not Found</div>
+    );
   if (!article) return <div>No article found.</div>;
 
   return (
