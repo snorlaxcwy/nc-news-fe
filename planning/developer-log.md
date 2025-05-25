@@ -161,3 +161,13 @@
     - https://dapper-froyo-08b7cd.netlify.app/
 
 # 14 ReadMe
+
+# 19 Post an article
+
+    - api/articles.js => postArticle()
+    - new component = AddArticle.jsx(form)
+        - useState => all input : title, topc, body, image
+        - error handling => useState isPosting, error
+    - App => add route, remeber to fetch article as we use select + map option
+    - added the path to footer.jsx already
+    - fixed the comment error in new article

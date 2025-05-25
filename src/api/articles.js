@@ -32,3 +32,10 @@ export function fetchTopicsByArticleId(topic) {
     .get(`${BASE_URL}/articles?topic=${topic}`)
     .then((res) => res.data.articles);
 }
+
+// post an article
+export function postArticle(article) {
+  return axios
+    .post(`${BASE_URL}/articles`, article)
+    .then((res) => res.data.article);
+}

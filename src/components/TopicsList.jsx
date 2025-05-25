@@ -26,6 +26,7 @@ export default function TopicsList() {
           display: "grid",
           gridTemplateColumns: "1fr 1fr",
           gap: "1.1rem",
+          marginBottom: "2rem",
         }}
       >
         {topics.map((topic) => (
@@ -37,7 +38,7 @@ export default function TopicsList() {
             <div
               style={{
                 background: "#f5f6fa",
-                marginTop: "2rem",
+                marginTop: "1rem",
                 borderRadius: "12px",
                 minHeight: "180px",
                 minWidth: "300px",

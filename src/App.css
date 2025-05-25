@@ -52,3 +52,22 @@ footer a.active {
 footer a:hover {
   color: #86f6f8;
 }
+.post-btn {
+  margin: 1rem 1rem 1rem 0;
+  padding: 0.5em 1.5em;
+  border-radius: 12px;
+  background: #fff;
+  color: #51545d;
+  font-weight: bold;
+  border: 1px solid #51545d;
+  cursor: crosshair;
+  transition: background 0.9s, color 0.2s;
+}
+.post-btn:hover:not(:disabled) {
+  background: #51545d;
+  color: #fff;
+}
+.post-btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.7;
+}
