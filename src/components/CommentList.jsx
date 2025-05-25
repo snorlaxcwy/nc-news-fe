@@ -41,8 +41,6 @@ export default function CommentList({ currentUser }) {
 
   if (isLoading) return <div>Loading comments...</div>;
   if (error) return <div>{error}</div>;
-  if (comments.length === 0)
-    return <div>No comments yet. Be the first one now!</div>;
 
   return (
     <div
@@ -67,7 +65,9 @@ export default function CommentList({ currentUser }) {
       >
         Comments
       </h4>
-
+      {comments.length === 0 && (
+        <div>No comments yet. Be the first one now!</div>
+      )}
       {comments.map((comment) => (
         <CommentCard
           key={comment.comment_id}
